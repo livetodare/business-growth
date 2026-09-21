@@ -635,32 +635,32 @@
 
       <!-- Live Earnings Estimator Calculator (Increases Sales & Engagement) -->
       <div class="interactive-calc-box">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
+        <div class="calc-header-wrap">
+          <div class="calc-header-text">
             <span class="section-pill pill-green">Sales Accelerant Tool</span>
-            <h3 style="font-size:1.5rem; color:#FFFFFF; margin-top:4px;">Interactive Projected Income Calculator</h3>
-            <p style="color:var(--text-secondary); font-size:0.9rem;">See how quickly your monthly income multiplies as you and your team take action.</p>
+            <h3 class="calc-main-title">Interactive Projected Income Calculator</h3>
+            <p class="calc-main-desc">See how quickly your monthly income multiplies as you and your team take action.</p>
           </div>
-          <button class="btn btn-primary trigger-lead-modal" data-opp="Both Opportunities" style="padding:10px 22px; font-size:0.9rem;">
+          <button class="btn btn-primary trigger-lead-modal calc-cta-btn" data-opp="Both Opportunities">
             Lock In This Projection ➔
           </button>
         </div>
 
         <div class="calc-sliders">
           <div class="slider-group">
-            <label>
-              <span>Direct Team Members:</span>
-              <strong id="directCountDisp" style="color:var(--gold-solid); font-size:1.1rem;">5 Members</strong>
+            <label class="slider-label">
+              <span class="slider-title">Direct Team Members:</span>
+              <strong id="directCountDisp" class="slider-val" style="color:var(--gold-solid);">5 Members</strong>
             </label>
             <input type="range" id="directSlider" min="2" max="50" value="5" step="1">
           </div>
 
           <div class="slider-group">
-            <label>
-              <span>Selected Opportunity Focus:</span>
-              <strong id="planTypeDisp" style="color:var(--cyan-accent); font-size:1.1rem;">Combined / Dual</strong>
+            <label class="slider-label">
+              <span class="slider-title">Selected Opportunity Focus:</span>
+              <strong id="planTypeDisp" class="slider-val" style="color:var(--cyan-accent);">Combined / Dual</strong>
             </label>
-            <select id="calcPlanSelect" style="width:100%; padding:10px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); color:#FFF; border-radius:8px; outline:none;">
+            <select id="calcPlanSelect" class="calc-select">
               <option value="both">Both (Salesbeez + Subham EV)</option>
               <option value="subham">Subham EV (₹15,000 Focus)</option>
               <option value="salesbeez">Salesbeez (₹2,000 Focus)</option>
@@ -679,7 +679,7 @@
           </div>
           <div class="calc-result-item">
             <h5>Unlocked Reward Tier</h5>
-            <div class="val cyan-text" id="dispUnlockedReward" style="font-size:1.1rem; padding-top:6px;">Smartphone + Trip</div>
+            <div class="val cyan-text" id="dispUnlockedReward">Smartphone + Trip</div>
           </div>
         </div>
       </div>
