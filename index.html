@@ -18,15 +18,27 @@
 </head>
 <body>
 
-  <!-- Cinematic Lion Intro Sequence Overlay -->
+  <!-- Cinematic Forest Lion Intro Sequence Overlay (Full-screen Atmospheric Experience) -->
   <div id="cinematicIntroOverlay" class="cinematic-intro-overlay" aria-label="Intro Cinematic">
-    <!-- Background Canvas for Lightning / Ember Particles -->
+    <!-- Atmospheric Jungle Mist & God Rays -->
+    <div class="intro-forest-mist"></div>
+    <div class="intro-forest-vignette"></div>
+
+    <!-- Background Canvas for Glowing Fireflies & Golden Embers -->
     <canvas id="introSparksCanvas" class="intro-sparks-canvas"></canvas>
 
     <!-- Visual Stages Container -->
     <div class="intro-stage-container">
       
-      <!-- Stage 1: Lion Running -->
+      <!-- Stage 0: Slow Majestic Lion Walking into the Forest -->
+      <div id="lionWalkingStage" class="lion-scene lion-stage-walking active">
+        <img src="lion_forest_walking.jpg" alt="King Lion Slowly Stalking Through Ancient Forest" class="lion-img-walking" id="lionWalkImg">
+        <div class="forest-light-shafts"></div>
+        <div class="forest-creeping-fog"></div>
+        <div class="forest-depth-vignette"></div>
+      </div>
+
+      <!-- Stage 1: Lion Sprint / Pounce -->
       <div id="lionRunningStage" class="lion-scene lion-stage-running">
         <img src="lion_running.jpg" alt="Majestic Lion Running Fast" class="lion-img-running" id="lionRunImg">
         <div class="speed-lines"></div>
@@ -57,16 +69,27 @@
           <p class="intro-tagline">"Take Action Today. Build Your Wealth Tomorrow."</p>
         </div>
         <div class="intro-launch-badge">
-          <span class="launch-spinner"></span> ENTERING WEALTH DASHBOARD...
+          <span class="launch-spinner"></span> ENTERING THE REALM OF WEALTH...
         </div>
       </div>
 
     </div>
 
-    <!-- Skip / Enter Directly Button -->
-    <button id="skipIntroBtn" class="skip-intro-btn" title="Skip Intro & Open Dashboard">
-      <span>Skip Intro ❯❯</span>
-    </button>
+    <!-- Cinematic Narration Subtitles HUD -->
+    <div id="introVoiceSubtitle" class="intro-subtitle-hud">
+      <span class="hud-sound-icon">🎙️</span>
+      <span id="subtitleText" class="subtitle-text">In the heart of the deep forest, the king awakens...</span>
+    </div>
+
+    <!-- Controls: Sound Toggle & Skip / Enter Now -->
+    <div class="intro-controls-wrap">
+      <button id="introAudioToggleBtn" class="intro-ctrl-btn" title="Toggle Sound / Voice Narration">
+        <span id="audioToggleIcon">🔊</span> <span id="audioToggleLabel">Sound On</span>
+      </button>
+      <button id="skipIntroBtn" class="intro-ctrl-btn skip-btn-glow" title="Enter Dashboard Immediately">
+        <span>Enter Live To Dare Life ❯❯</span>
+      </button>
+    </div>
   </div>
 
   <!-- Ambient Light Effects -->
@@ -120,16 +143,23 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Majestic Forest Lion Theme -->
   <section class="hero-section">
-    <div class="container">
+    <div class="hero-forest-bg"></div>
+    <div class="hero-forest-mist-overlay"></div>
+    <div class="container hero-content-relative">
       <div class="hero-tagline-badge">
-        <span>✨</span> "Take Action Today. Build Your Wealth Tomorrow."
+        <span>🦁</span> "In the jungle of life, live to dare." — Take Action Today!
+      </div>
+
+      <div class="hero-lion-crest">
+        <span class="crest-flare"></span>
+        <span class="crest-icon">👑</span>
       </div>
 
       <h1 class="hero-headline">
         Dare To Grow. <br>
-        <span class="gold-text">Dare To Win.</span>
+        <span class="gold-text">Rule Your Destiny.</span>
       </h1>
 
       <p class="hero-subheadline">
