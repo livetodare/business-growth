@@ -46,10 +46,16 @@ html {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   line-height: 1.6;
   background: radial-gradient(circle at 50% 0%, #152142 0%, #070B19 70%);
   min-height: 100vh;
@@ -1261,6 +1267,21 @@ h1, h2, h3, h4, .brand-font {
   }
   .nav-wrap {
     padding: 12px 0;
+    gap: 10px;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .nav-call-btn .btn-text {
+    display: none;
+  }
+  .nav-call-btn {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .nav-intro-btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
   }
   .opportunities-grid {
     grid-template-columns: 1fr;
@@ -1287,6 +1308,7 @@ h1, h2, h3, h4, .brand-font {
     top: 100%;
     left: 0;
     right: 0;
+    width: 100%;
     background: rgba(8, 13, 33, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -1314,13 +1336,14 @@ h1, h2, h3, h4, .brand-font {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--glass-border);
     color: #FFFFFF;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     cursor: pointer;
     transition: var(--transition);
   }
@@ -1350,61 +1373,96 @@ h1, h2, h3, h4, .brand-font {
 @media (max-width: 640px) {
   .top-bar {
     font-size: 0.76rem;
-    padding: 6px 12px;
+    padding: 6px 10px;
+    overflow: hidden;
   }
   .top-bar-content {
     gap: 6px;
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
   
   .container {
     padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .nav-wrap {
     padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
   }
   .logo-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .logo-mark {
-    width: 36px;
-    height: 36px;
-    font-size: 1.05rem;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 1rem;
+    border-radius: 8px;
   }
   .logo-sub {
-    font-size: 0.62rem;
-    letter-spacing: 1px;
+    font-size: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
   }
   
-  /* Hide the desktop call text button if space is tight, keep lion intro & icon button */
-  .btn-call span {
-    display: none;
-  }
-  .btn-call {
+  .nav-call-btn {
     padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: var(--radius-full);
   }
-  #replayIntroBtn span {
+  .nav-call-btn .btn-text {
     display: none;
   }
-  #replayIntroBtn {
+  
+  .nav-intro-btn {
     padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+  .nav-intro-btn .btn-text {
+    display: none;
   }
   
   .hero-section {
-    padding: 45px 0 35px;
+    padding: 40px 0 30px;
+    width: 100%;
+    max-width: 100%;
   }
   .hero-tagline-badge {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     padding: 4px 12px;
     white-space: normal;
     text-align: center;
     line-height: 1.4;
+    max-width: 100%;
   }
   .hero-headline {
     font-size: 2.1rem;
     margin-bottom: 16px;
+    word-wrap: break-word;
   }
   .hero-subheadline {
     font-size: 0.95rem;
@@ -1425,6 +1483,8 @@ h1, h2, h3, h4, .brand-font {
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 16px;
+    width: 100%;
+    max-width: 100%;
   }
   .stat-item {
     border-right: none;

@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initSparksCanvas(canvas, () => sparksRunning);
     }
 
-    let soundEnabled = true;
+    let soundEnabled = false; // Default sound to OFF (muted) so voice does not automatically start
     let audioCtx = null;
     let forestAmbienceGain = null;
     let isEnded = false;
@@ -628,9 +628,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (audioToggleLabel) audioToggleLabel.textContent = 'Sound On';
           ensureAudioContext();
           startForestAmbience();
+          // Speak current stage subtitle if available
+          if (subtitleElem && subtitleElem.textContent) {
+            speakNarration(subtitleElem.textContent.replace(/["“”]/g, ''));
+          }
         } else {
           if (audioToggleIcon) audioToggleIcon.textContent = '🔇';
-          if (audioToggleLabel) audioToggleLabel.textContent = 'Muted';
+          if (audioToggleLabel) audioToggleLabel.textContent = 'Sound Off';
           if (window.speechSynthesis) window.speechSynthesis.cancel();
           if (forestAmbienceGain && audioCtx) {
             forestAmbienceGain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
@@ -638,22 +642,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-
-    // Ensure audio can play on first interaction if blocked by browser policy
-    const enableAudioOnUserGesture = () => {
-      ensureAudioContext();
-      if (soundEnabled && (!audioCtx || audioCtx.state === 'suspended')) {
-        audioCtx.resume().then(() => {
-          startForestAmbience();
-        });
-      }
-      window.removeEventListener('click', enableAudioOnUserGesture);
-      window.removeEventListener('touchstart', enableAudioOnUserGesture);
-      window.removeEventListener('keydown', enableAudioOnUserGesture);
-    };
-    window.addEventListener('click', enableAudioOnUserGesture);
-    window.addEventListener('touchstart', enableAudioOnUserGesture);
-    window.addEventListener('keydown', enableAudioOnUserGesture);
 
     // --- Master Cinematic Timeline ---
     function runIntro() {
