@@ -1220,6 +1220,207 @@ h1, h2, h3, h4, .brand-font {
   margin: 0 auto 16px;
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
+/* --- Interactive Business Guide & Career Ladder Section --- */
+.guide-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.guide-tab-btn {
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.guide-tab-btn.active {
+  background: var(--gold-gradient);
+  color: #070B19;
+  box-shadow: 0 4px 20px var(--gold-glow);
+  border-color: transparent;
+}
+
+.guide-tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.guide-tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pdf-download-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(22, 36, 73, 0.7), rgba(11, 20, 44, 0.9));
+  border: 1px solid var(--glass-border-gold);
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pdf-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdf-icon-badge {
+  width: 52px;
+  height: 52px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--glass-border-gold);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.pdf-meta h4 {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.pdf-meta p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.modern-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.modern-table th {
+  background: rgba(13, 21, 43, 0.95);
+  color: var(--gold-solid);
+  font-weight: 700;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.modern-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #E2E8F0;
+}
+
+.modern-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.badge-cadre {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--cyan-accent);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-reward {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--green-accent);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Earnings Calculator in Guide */
+.interactive-calc-box {
+  background: rgba(11, 20, 44, 0.7);
+  border: 1px solid var(--glass-border-cyan);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.calc-sliders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--gold-solid);
+  cursor: pointer;
+}
+
+.calc-result-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+}
+
+.calc-result-item h5 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.calc-result-item .val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
 
 /* Responsive Media Queries - Optimized for Mobile, Tablet, Laptops, and Large Desktops */
 
@@ -1579,6 +1780,49 @@ h1, h2, h3, h4, .brand-font {
   
   .interactive-calc-box {
     padding: 18px 14px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .interactive-calc-box > div:first-child {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .interactive-calc-box > div:first-child button {
+    width: 100%;
+  }
+  .calc-sliders {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+  .slider-group {
+    width: 100%;
+  }
+  .slider-group label {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .calc-result-strip {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .calc-result-item {
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .calc-result-item .val {
+    font-size: 1.45rem;
+  }
+  
+  .btn {
+    white-space: normal;
+    text-align: center;
   }
   
   .modal-content {
@@ -1652,202 +1896,8 @@ h1, h2, h3, h4, .brand-font {
   }
 }
 
-/* --- Interactive Business Guide & Career Ladder Section --- */
-.guide-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
 
-.guide-tab-btn {
-  padding: 12px 28px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: var(--transition);
-}
 
-.guide-tab-btn.active {
-  background: var(--gold-gradient);
-  color: #070B19;
-  box-shadow: 0 4px 20px var(--gold-glow);
-  border-color: transparent;
-}
-
-.guide-tab-content {
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-
-.guide-tab-content.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.pdf-download-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  background: linear-gradient(135deg, rgba(22, 36, 73, 0.7), rgba(11, 20, 44, 0.9));
-  border: 1px solid var(--glass-border-gold);
-  border-radius: var(--radius-lg);
-  margin-bottom: 32px;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.pdf-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.pdf-icon-badge {
-  width: 52px;
-  height: 52px;
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid var(--glass-border-gold);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-}
-
-.pdf-meta h4 {
-  font-size: 1.15rem;
-  color: #FFFFFF;
-  margin-bottom: 4px;
-}
-
-.pdf-meta p {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-}
-
-.modern-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  margin: 20px 0;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--glass-border);
-}
-
-.modern-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.92rem;
-}
-
-.modern-table th {
-  background: rgba(13, 21, 43, 0.95);
-  color: var(--gold-solid);
-  font-weight: 700;
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-}
-
-.modern-table td {
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  color: #E2E8F0;
-}
-
-.modern-table tr:hover td {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.badge-cadre {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.78rem;
-  background: rgba(6, 182, 212, 0.15);
-  color: var(--cyan-accent);
-  border: 1px solid rgba(6, 182, 212, 0.3);
-}
-
-.badge-reward {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.78rem;
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--green-accent);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* Earnings Calculator in Guide */
-.interactive-calc-box {
-  background: rgba(11, 20, 44, 0.7);
-  border: 1px solid var(--glass-border-cyan);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  margin-top: 32px;
-}
-
-.calc-sliders {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin: 20px 0;
-}
-
-.slider-group label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-.slider-group input[type="range"] {
-  width: 100%;
-  accent-color: var(--gold-solid);
-  cursor: pointer;
-}
-
-.calc-result-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-  padding: 20px;
-  border-radius: var(--radius-md);
-  background: rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-
-.calc-result-item h5 {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.calc-result-item .val {
-  font-size: 1.6rem;
-  font-weight: 800;
-  font-family: var(--font-heading);
-}
 
 /* Smart Interactive Sales Guide Widget (Chat Drawer) */
 .advisor-bubble-btn {

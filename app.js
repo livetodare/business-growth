@@ -344,6 +344,13 @@ document.addEventListener('DOMContentLoaded', () => {
           `2. <a href="Subham_EV_Plan.pdf" download style="color:var(--gold-solid); font-weight:700;">Subham EV Business Plan.pdf (21 Pages)</a><br><br>` +
           `Need someone to walk you through the slides? <a href="https://wa.me/919347965863?text=Hi%2C%20please%20walk%20me%20through%20both%20PDF%20plans" target="_blank" style="color:#25D366; font-weight:700;">Click to chat on WhatsApp (+91 9347965863)</a>.`
         );
+      } else if (goal === 'youtube') {
+        addAdvisorMessage(
+          `📺 <strong>Official YouTube Channels:</strong><br><br>` +
+          `• <strong>Salesbeez:</strong> <a href="https://www.youtube.com/@salesbeezvizag" target="_blank" rel="noopener" style="color:#FF4D4D; font-weight:700;">▶ @salesbeezvizag on YouTube</a><br>` +
+          `• <strong>Subham MG-1 EV:</strong> <a href="https://www.youtube.com/results?search_query=MG1+Bhoomi+EV+VIZAG" target="_blank" rel="noopener" style="color:#FF4D4D; font-weight:700;">▶ MG1 Bhoomi EV VIZAG on YouTube</a><br><br>` +
+          `Watch product demos, bike walkarounds, compensation overviews, and live partner success videos!`
+        );
       } else if (goal === 'whatsapp') {
         window.open('https://wa.me/919347965863?text=Hello%20Live%20To%20Dare%20Life%20leadership%2C%20I%20want%20direct%20guidance%20on%20joining%20your%20team.', '_blank');
         addAdvisorMessage(`🚀 Opening WhatsApp to connect with senior leadership at <strong>+91 9347965863</strong>...`);
@@ -360,7 +367,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         const lower = val.toLowerCase();
-        if (lower.includes('pdf') || lower.includes('plan') || lower.includes('document')) {
+        if (lower.includes('youtube') || lower.includes('video') || lower.includes('channel') || lower.includes('watch')) {
+          handleAdvisorAction('youtube', 'Watch on YouTube');
+        } else if (lower.includes('pdf') || lower.includes('plan') || lower.includes('document')) {
           handleAdvisorAction('pdf', 'Download PDF Plans');
         } else if (lower.includes('salesbeez') || lower.includes('2000') || lower.includes('grocery')) {
           handleAdvisorAction('salesbeez', 'Salesbeez Details');
